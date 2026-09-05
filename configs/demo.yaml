@@ -1,0 +1,55 @@
+project:
+  name: CycAMP-FusionDemo
+  seed: 42
+  project_root: 'D:\CycAMP-FusionDemo'
+
+data:
+  total_unique_limit: 10000
+  target_total_min: 6000
+  target_total_max: 9000
+  cyclic_core_limit: 2500
+  pretrain_limit: 7500
+  min_sequence_length: 5
+  max_cyclic_length: 50
+  max_pretrain_length: 100
+  mic_threshold_ug_ml: 25.0
+  near_duplicate_jaccard_threshold: 0.8
+  standard_amino_acids: ACDEFGHIKLMNPQRSTVWY
+
+model:
+  esm_model: facebook/esm2_t12_35M_UR50D
+  frozen_embedding_size: 480
+  pca_components_max: 64
+  lora:
+    rank: 8
+    alpha: 16
+    dropout: 0.1
+    target_modules:
+      - query
+      - value
+
+structure:
+  representation_name: three-dimensional candidate conformer
+  conformers_initial: 10
+  conformers_retry: 20
+  use_macrocycle_torsions: true
+  minimum_success_rate: 0.70
+
+evaluation:
+  primary_metric: mcc
+  folds: 3
+  repeat_seeds:
+    - 42
+    - 43
+    - 44
+
+paths:
+  raw_data: data/raw
+  interim_data: data/interim
+  processed_data: data/processed
+  models: artifacts/models
+  embeddings: artifacts/embeddings
+  structures: artifacts/structures
+  metrics: artifacts/metrics
+  figures: artifacts/figures
+

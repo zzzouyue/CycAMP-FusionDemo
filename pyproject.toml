@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cycamp-fusion-demo"
+version = "0.1.0"
+description = "A reproducible undergraduate demo for cyclic antimicrobial peptide activity scoring."
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+license = {text = "Research and educational use; third-party components retain their own licenses."}
+authors = [{name = "CycAMP-FusionDemo contributors"}]
+
+[project.scripts]
+cycamp-selfcheck = "cycamp.selfcheck:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+

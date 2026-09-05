@@ -1,0 +1,82 @@
+# Environments and caches
+.conda/
+.cache/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Data: keep directory contracts, not downloaded/generated content
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/external/*
+!data/external/.gitkeep
+# Versioned local data exports follow the same rule as their base directories.
+data/interim_v2/
+data/processed_v2/
+
+# Local project governance and report-authoring records are not part of the
+# public-facing demonstration repository.
+AGENTS.md
+DECISIONS.md
+PROJECT_STATE.yaml
+handoffs/
+reports/
+scripts/build_report.py
+scripts/build_report_rewrite.py
+scripts/make_report_pdf.py
+
+# Generated artifacts
+artifacts/models/*
+!artifacts/models/.gitkeep
+artifacts/embeddings/*
+!artifacts/embeddings/.gitkeep
+artifacts/structures/*
+!artifacts/structures/.gitkeep
+artifacts/structures_m2*/
+artifacts/structures_highfold/
+artifacts/metrics/*
+!artifacts/metrics/.gitkeep
+artifacts/figures/*
+!artifacts/figures/.gitkeep
+outputs/*
+!outputs/.gitkeep
+qa_report_pdf/
+
+# Model and molecular files
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npy
+*.npz
+*.sdf
+*.mol2
+
+# Reports can contain personal information; only explicit templates belong in Git
+*.docx
+*.pdf
+
+# Empty local directory placeholders are unnecessary in the presentation repo.
+artifacts/embeddings/.gitkeep
+artifacts/figures/.gitkeep
+artifacts/metrics/.gitkeep
+artifacts/models/.gitkeep
+artifacts/structures/.gitkeep
+data/external/.gitkeep
+data/interim/.gitkeep
+data/processed/.gitkeep
+data/raw/.gitkeep
+outputs/.gitkeep
